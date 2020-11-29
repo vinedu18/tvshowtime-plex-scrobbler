@@ -50,7 +50,7 @@ class Tvst(object):
         }
 
         url = urlparse.urlunparse(('https',
-                                  'api.tvshowtime.com',
+                                  'api.tvtime.com',
                                   '/v1/oauth/device/code', '', '', ''))
 
         res = self._do_tvst_post(url, urllib.urlencode(args))
@@ -64,7 +64,7 @@ class Tvst(object):
             'code': code,
         }
         url = urlparse.urlunparse(('https',
-                                  'api.tvshowtime.com',
+                                  'api.tvtime.com',
                                   '/v1/oauth/access_token', '', '', ''))
         res = self._do_tvst_post(url, urllib.urlencode(args))
 
@@ -83,7 +83,7 @@ class Tvst(object):
             'number': number.zfill(2)
         }
         url = urlparse.urlunparse(('https',
-                                  'api.tvshowtime.com',
+                                  'api.tvtime.com',
                                   '/v1/checkin', '', '', ''))
 
         try:
@@ -95,7 +95,7 @@ class Tvst(object):
 
     def tvst_auth(self):
 
-        print '== Requesting tvshowtime.com auth =='
+        print '== Requesting tvtime.com auth =='
 
         auth_infos = self._get_auth_infos()
         accepted = 'n'
